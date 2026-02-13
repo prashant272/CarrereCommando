@@ -1,0 +1,292 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Student-focused vibrant colors */
+  --primary: #6366F1;
+  /* Vibrant Indigo */
+  --primary-light: #818CF8;
+  --primary-dark: #4F46E5;
+  --accent: #F59E0B;
+  /* Energetic Amber */
+  --accent-light: #FBBF24;
+  --success: #10B981;
+  /* Fresh Green */
+  --electric: #EC4899;
+  /* Electric Pink */
+  --dark: #0F172A;
+  --dark-secondary: #1E293B;
+  --dark-tertiary: #334155;
+
+  /* Light theme colors */
+  --light-bg: #FFFFFF;
+  --light-bg-secondary: #F9FAFB;
+  --light-text: #1F2937;
+  --light-text-secondary: #6B7280;
+  --light-border: #E5E7EB;
+}
+
+
+@layer base {
+  body {
+    /* Premium gradient background - Deep blue to purple */
+    background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 50%, #312E81 100%);
+    @apply text-gray-100 font-sans antialiased;
+    margin: 0;
+    min-height: 100vh;
+    background-attachment: fixed;
+    position: relative;
+  }
+
+  /* Animated background pattern */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+    animation: pulse 15s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold text-white tracking-tight;
+  }
+
+  p {
+    @apply text-gray-300 leading-relaxed;
+  }
+
+  /* Light theme styles - Comprehensive styling for light mode */
+  .light-theme body {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F9FAFB 50%, #F3F4F6 100%);
+    @apply text-gray-900;
+  }
+
+  .light-theme body::before {
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(236, 72, 153, 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
+  }
+
+  /* Light theme text colors */
+  .light-theme h1,
+  .light-theme h2,
+  .light-theme h3,
+  .light-theme h4,
+  .light-theme h5,
+  .light-theme h6 {
+    @apply text-gray-900;
+  }
+
+  .light-theme p {
+    @apply text-gray-700;
+  }
+
+  /* Light theme scrollbar */
+  .light-theme ::-webkit-scrollbar-track {
+    background: #F3F4F6;
+  }
+
+  .light-theme ::-webkit-scrollbar-thumb {
+    border-color: #F3F4F6;
+  }
+
+  /* Smooth transitions for theme changes */
+  body,
+  body::before {
+    transition: background 0.5s ease, color 0.3s ease;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    transition: color 0.3s ease;
+  }
+}
+
+@layer components {
+
+
+  /* Premium gradient buttons */
+  .btn-primary {
+    @apply px-8 py-3 font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 uppercase tracking-widest text-sm relative overflow-hidden;
+    background: linear-gradient(135deg, #6366F1 0%, #EC4899 100%);
+    color: white;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-primary:hover::before {
+    left: 100%;
+  }
+
+  .btn-outline {
+    @apply px-8 py-3 border-2 font-bold rounded-xl transition-all duration-300 uppercase tracking-widest text-sm backdrop-blur-sm;
+    border-color: #6366F1;
+    color: #818CF8;
+    background: rgba(99, 102, 241, 0.1);
+  }
+
+  .btn-outline:hover {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.2));
+    border-color: #EC4899;
+    color: white;
+  }
+
+  /* Premium white cards with subtle glow */
+  .glass-card {
+    @apply bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20;
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(99, 102, 241, 0.1),
+      0 0 40px rgba(99, 102, 241, 0.05);
+  }
+
+  /* Vibrant gradient text */
+  .gold-text {
+    @apply text-transparent bg-clip-text font-extrabold;
+    background-image: linear-gradient(135deg, #6366F1 0%, #EC4899 50%, #F59E0B 100%);
+  }
+
+  /* Student-focused accent text */
+  .accent-text {
+    @apply text-transparent bg-clip-text font-bold;
+    background-image: linear-gradient(90deg, #F59E0B, #FBBF24);
+  }
+}
+
+/* Premium scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F172A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6366F1, #EC4899);
+  border-radius: 10px;
+  border: 2px solid #0F172A;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #818CF8, #F472B6);
+}
+
+@layer utilities {
+
+  /* Floating animation */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  /* Glow animation for premium elements */
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite;
+  }
+
+  @keyframes glow {
+
+    0%,
+    100% {
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.3), 0 0 40px rgba(236, 72, 153, 0.2);
+    }
+
+    50% {
+      box-shadow: 0 0 40px rgba(99, 102, 241, 0.5), 0 0 60px rgba(236, 72, 153, 0.3);
+    }
+  }
+
+  /* Shimmer effect for cards */
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer 3s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 100%;
+    }
+  }
+}
+
+/* Custom select dropdown styling */
+select option {
+  background-color: #1E293B;
+  color: white;
+  padding: 12px;
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.5em 1.5em;
+}

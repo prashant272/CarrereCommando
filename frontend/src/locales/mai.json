@@ -1,0 +1,121 @@
+{
+    "nav": {
+        "home": "होम",
+        "courses": "पाठ्यक्रम",
+        "about": "हमरा बारे मे",
+        "blog": "ब्लॉग",
+        "contact": "संपर्क करू",
+        "bookCounselling": "परामर्श बुक करू"
+    },
+    "hero": {
+        "title": "अपन सपना के करियर के रास्ता खोजू",
+        "subtitle": "विशेषज्ञ मार्गदर्शन के साथ अपन शैक्षिक यात्रा शुरू करू"
+    },
+    "common": {
+        "readMore": "आओर पढ़ू",
+        "learnMore": "आओर जानू",
+        "viewAll": "सब देखू",
+        "submit": "जमा करू",
+        "loading": "लोड हो रहल अछि...",
+        "error": "त्रुटि",
+        "success": "सफलता",
+        "established": "स्थापित"
+    },
+    "courses": {
+        "title": "लोकप्रिय पाठ्यक्रम",
+        "subtitle": "अपन भविष्य के आकार देबाक लेल डिज़ाइन कएल गेल पेशेवर पाठ्यक्रम के व्यापक श्रेणी देखू"
+    },
+    "about": {
+        "title": "हमरा बारे मे",
+        "description": "हम अहाँक शैक्षिक यात्रा मे मार्गदर्शन करबाक लेल समर्पित छी"
+    },
+    "colleges": {
+        "title": "शीर्ष कॉलेज",
+        "subtitle": "भारत के प्रमुख शैक्षिक संस्थान देखू",
+        "viewColleges": "कॉलेज देखू"
+    },
+    "stats": {
+        "students": "परामर्श प्राप्त छात्र",
+        "colleges": "साझेदार कॉलेज",
+        "courses": "उपलब्ध पाठ्यक्रम",
+        "success": "सफलता दर"
+    },
+    "destination": {
+        "studyInIndia": "भारत मे अध्ययन",
+        "studyAbroad": "विदेश मे अध्ययन",
+        "exploreColleges": "कॉलेज देखू"
+    },
+    "heroStats": {
+        "expertCounselors": "विशेषज्ञ परामर्शदाता",
+        "successRate": "सफलता दर",
+        "support": "समर्थन"
+    },
+    "services": {
+        "personalizedCounselling": "व्यक्तिगत परामर्श",
+        "admissionGuidance": "प्रवेश मार्गदर्शन",
+        "careerPathMapping": "करियर पथ मैपिंग",
+        "interviewPreparation": "साक्षात्कार तैयारी",
+        "documentAssistance": "दस्तावेज़ सहायता",
+        "scholarshipSupport": "छात्रवृत्ति समर्थन",
+        "counselling": "परामर्श",
+        "admissionSupport": "प्रवेश सहायता",
+        "testPrep": "परीक्षा तैयारी",
+        "scholarship": "छात्रवृत्ति",
+        "visaAssistance": "वीज़ा सहायता"
+    },
+    "footerLinks": {
+        "home": "होम",
+        "courses": "पाठ्यक्रम",
+        "aboutUs": "हमरा बारे मे",
+        "blog": "ब्लॉग",
+        "viewOnMap": "नक्शा पर देखू",
+        "nominations": "नामांकन",
+        "sponsorship": "प्रायोजन",
+        "helpline": "हेल्पलाइन",
+        "office": "कार्यालय"
+    },
+    "collegeTypes": {
+        "government": "सरकारी",
+        "private": "निजी"
+    },
+    "collegeCategories": {
+        "engineering": "इंजीनियरिंग",
+        "medical": "चिकित्सा",
+        "commerce": "वाणिज्य",
+        "arts": "कला"
+    },
+    "topCourses": {
+        "title": "शीर्ष पाठ्यक्रम",
+        "subtitle": "अपन भविष्य के आकार देबाक लेल डिज़ाइन कएल गेल पेशेवर पाठ्यक्रम के व्यापक श्रेणी देखू",
+        "viewAll": "सब पाठ्यक्रम देखू",
+        "allCourses": "सब पाठ्यक्रम",
+        "autoScrolling": "सब उपलब्ध पाठ्यक्रम के माध्यम सँ ऑटो-स्क्रोलिंग",
+        "explore": "अन्वेषण करू",
+        "back": "वापस"
+    },
+    "partnerInstitutions": {
+        "title": "हमर साझेदार संस्थान",
+        "subtitle": "भारत के प्रमुख शैक्षिक संस्थान के साथ सहयोग"
+    },
+    "servicesSection": {
+        "title": "हमर सेवा",
+        "studentProfile": "छात्र प्रोफ़ाइल विश्लेषण",
+        "careerCounseling": "करियर परामर्श",
+        "courseSelection": "पाठ्यक्रम/विश्वविद्यालय चयन",
+        "applicationAssistance": "आवेदन आ प्रवेश सहायता"
+    },
+    "whyChooseUs": {
+        "title": "हमरा किएक चुनू?",
+        "subtitle": "जानू कि हमरा की अलग बनबैत अछि आ हजारो छात्र आ परिवार प्रति वर्ष अपन शैक्षिक यात्रा के मार्गदर्शन करबाक लेल हमरा पर किएक भरोसा करैत छथि।",
+        "counselingHours": "परामर्श अनुभव के घंटा",
+        "branchOffices": "शाखा कार्यालय आ आओर आबि रहल अछि",
+        "studentsAbroad": "विदेश मे छात्र प्लेसमेंट आ बहुत किछु",
+        "yearsExperience": "विश्वास आ वफादारी के साथ अनुभव के वर्ष"
+    },
+    "latestBlogs": {
+        "title": "नवीनतम ब्लॉग",
+        "subtitle": "हमर नवीनतम लेख आ अंतर्दृष्टि के साथ अपडेट रहू",
+        "readMore": "आओर पढ़ू",
+        "viewAll": "सब ब्लॉग देखू"
+    }
+}

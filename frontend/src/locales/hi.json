@@ -1,0 +1,158 @@
+{
+    "nav": {
+        "home": "होम",
+        "about": "हमारे बारे में",
+        "mba": "एमबीए अपडेट",
+        "engineering": "इंजीनियरिंग अपडेट",
+        "neet": "नीट अपडेट",
+        "blogs": "ब्लॉग",
+        "contact": "संपर्क करें",
+        "bookCounselling": "परामर्श बुक करें"
+    },
+    "hero": {
+        "title": "आपका करियर, हमारा मार्गदर्शन",
+        "subtitle": "एमबीए, इंजीनियरिंग, नीट और अधिक के लिए विशेषज्ञ परामर्श",
+        "cta": "शुरू करें"
+    },
+    "footer": {
+        "about": "हमारे बारे में",
+        "quickLinks": "त्वरित लिंक",
+        "contact": "संपर्क",
+        "followUs": "हमें फॉलो करें",
+        "copyright": "सर्वाधिकार सुरक्षित",
+        "address": "प्राइम टाइम रिसर्च मीडिया प्राइवेट लिमिटेड, सी-31, नवादा हाउसिंग कॉम्प्लेक्स, नई दिल्ली-59"
+    },
+    "common": {
+        "readMore": "और पढ़ें",
+        "learnMore": "अधिक जानें",
+        "viewAll": "सभी देखें",
+        "submit": "जमा करें",
+        "loading": "लोड हो रहा है...",
+        "error": "त्रुटि",
+        "success": "सफलता",
+        "established": "स्थापित"
+    },
+    "courses": {
+        "title": "लोकप्रिय पाठ्यक्रम",
+        "subtitle": "हमारे शीर्ष पाठ्यक्रमों का अन्वेषण करें",
+        "mba": "एमबीए",
+        "engineering": "इंजीनियरिंग",
+        "neet": "नीट",
+        "medical": "मेडिकल"
+    },
+    "colleges": {
+        "title": "भरत क शरष कलज",
+        "subtitle": "सबस परतषठत ससथन क अनवषण कर ज आपक करयर वकस क लिए उतकषट शकष और पलसमट परदन करत ह",
+        "viewColleges": "सभ कलज दख",
+        "visitWebsite": "वबसइट पर जए"
+    },
+    "blog": {
+        "title": "नवीनतम ब्लॉग",
+        "subtitle": "हमारे नवीनतम लेखों के साथ अपडेट रहें",
+        "readMore": "और पढ़ें",
+        "author": "लेखक",
+        "date": "तारीख",
+        "category": "श्रेणी"
+    },
+    "counselling": {
+        "title": "परामर्श बुक करें",
+        "subtitle": "अपने करियर के लिए विशेषज्ञ मार्गदर्शन प्राप्त करें",
+        "name": "नाम",
+        "email": "ईमेल",
+        "phone": "फोन",
+        "message": "संदेश",
+        "submit": "जमा करें"
+    },
+    "about": {
+        "title": "छतर क उनक सपन क सकर करन क लए सशकत बनन",
+        "subtitle": "करियर कमांडो के बारे में और जानें",
+        "description": "हम विशेषज्ञ परामर्श और मार्गदर्शन के माध्यम से छात्रों को उनके करियर लक्ष्यों को प्राप्त करने में मदद करने के लिए समर्पित हैं।",
+        "yearsExperience": "10+ वरष",
+        "excellence": "शकषक परमरश म उतकषटत",
+        "learnMore": "हमर बर म और जन"
+    },
+    "stats": {
+        "totalStudents": "कुल छात्र",
+        "expertCounselors": "विशेषज्ञ परामर्शदाता",
+        "successRate": "सफलता दर",
+        "partnerColleges": "साझेदार कॉलेज"
+    },
+    "destination": {
+        "studyInIndia": "भारत में अध्ययन",
+        "studyAbroad": "विदेश में अध्ययन",
+        "exploreColleges": "कॉलेज देखें"
+    },
+    "heroStats": {
+        "expertCounselors": "विशेषज्ञ परामर्शदाता",
+        "successRate": "सफलता दर",
+        "support": "समर्थन"
+    },
+    "services": {
+        "personalizedCounselling": "व्यक्तिगत परामर्श",
+        "admissionGuidance": "प्रवेश मार्गदर्शन",
+        "careerPathMapping": "करियर पाथ मैपिंग",
+        "interviewPreparation": "साक्षात्कार तैयारी",
+        "documentAssistance": "दस्तावेज़ सहायता",
+        "scholarshipSupport": "छात्रवृत्ति समर्थन",
+        "counselling": "परामर्श",
+        "admissionSupport": "प्रवेश सहायता",
+        "testPrep": "परीक्षा तैयारी",
+        "scholarship": "छात्रवृत्ति",
+        "visaAssistance": "वीज़ा सहायता"
+    },
+    "footerLinks": {
+        "home": "होम",
+        "courses": "पाठ्यक्रम",
+        "aboutUs": "हमारे बारे में",
+        "blog": "ब्लॉग",
+        "viewOnMap": "मानचित्र पर देखें",
+        "nominations": "नामांकन",
+        "sponsorship": "प्रायोजन",
+        "helpline": "हेल्पलाइन",
+        "office": "कार्यालय"
+    },
+    "collegeTypes": {
+        "government": "सरकारी",
+        "private": "निजी"
+    },
+    "collegeCategories": {
+        "engineering": "इंजीनियरिंग",
+        "medical": "चिकित्सा",
+        "commerce": "वाणिज्य",
+        "arts": "कला"
+    },
+    "topCourses": {
+        "title": "शीर्ष पाठ्यक्रम",
+        "subtitle": "अपने भविष्य को आकार देने के लिए डिज़ाइन किए गए पेशेवर पाठ्यक्रमों की व्यापक श्रेणी देखें",
+        "viewAll": "सभी पाठ्यक्रम देखें",
+        "allCourses": "सभी पाठ्यक्रम",
+        "autoScrolling": "सभी उपलब्ध पाठ्यक्रमों के माध्यम से ऑटो-स्क्रोलिंग",
+        "explore": "अन्वेषण करें",
+        "back": "वापस"
+    },
+    "partnerInstitutions": {
+        "title": "हमारे पार्टनर संस्थान",
+        "subtitle": "भारत के प्रमुख शैक्षिक संस्थानों के साथ सहयोग"
+    },
+    "servicesSection": {
+        "title": "हमारी सेवाएं",
+        "studentProfile": "छात्र प्रोफ़ाइल विश्लेषण",
+        "careerCounseling": "करियर परामर्श",
+        "courseSelection": "पाठ्यक्रम/विश्वविद्यालय चयन",
+        "applicationAssistance": "आवेदन और प्रवेश सहायता"
+    },
+    "whyChooseUs": {
+        "title": "हमें क्यों चुनें?",
+        "subtitle": "जानिए कि हमें क्या अलग बनाता है और हज़ारों छात्र और परिवार हर साल अपनी शैक्षिक यात्रा का मार्गदर्शन करने के लिए हम पर क्यों भरोसा करते हैं।",
+        "counselingHours": "परामर्श अनुभव के घंटे",
+        "branchOffices": "शाखा कार्यालय और अधिक आ रहे हैं",
+        "studentsAbroad": "विदेश में छात्र प्लेसमेंट और कई और",
+        "yearsExperience": "विश्वास और वफादारी के साथ अनुभव के वर्ष"
+    },
+    "latestBlogs": {
+        "title": "नवीनतम ब्लॉग",
+        "subtitle": "हमारे नवीनतम लेखों और जानकारियों के साथ अपडेट रहें",
+        "readMore": "और पढ़ें",
+        "viewAll": "सभी ब्लॉग देखें"
+    }
+}

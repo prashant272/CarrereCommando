@@ -1,0 +1,158 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About Us",
+        "mba": "MBA Updates",
+        "engineering": "Engineering Updates",
+        "neet": "NEET Updates",
+        "blogs": "Blogs",
+        "contact": "Contact Us",
+        "bookCounselling": "Book Counselling"
+    },
+    "hero": {
+        "title": "Find the Right & Best College for Your Future",
+        "subtitle": "Confused after 12th? Our experts will guide you to the right course.",
+        "cta": "Get Started"
+    },
+    "footer": {
+        "about": "About",
+        "quickLinks": "Quick Links",
+        "contact": "Contact Us",
+        "followUs": "Follow Us",
+        "copyright": "All rights reserved",
+        "address": "Prime Time Research Media Pvt. Ltd, C-31, Nawada Housing Complex, New Delhi-59"
+    },
+    "common": {
+        "readMore": "Read More",
+        "learnMore": "Learn More",
+        "viewAll": "View All",
+        "submit": "Submit",
+        "loading": "Loading...",
+        "error": "Error",
+        "success": "Success",
+        "established": "Est."
+    },
+    "courses": {
+        "title": "Popular Courses",
+        "subtitle": "Explore our top courses",
+        "mba": "MBA",
+        "engineering": "Engineering",
+        "neet": "NEET",
+        "medical": "Medical"
+    },
+    "colleges": {
+        "title": "Top Colleges in India",
+        "subtitle": "Explore the most prestigious institutions that provide excellent education and placements for your career growth.",
+        "viewColleges": "View All Colleges",
+        "visitWebsite": "Visit Website"
+    },
+    "blog": {
+        "title": "Latest Blogs",
+        "subtitle": "Stay updated with our latest articles",
+        "readMore": "Read More",
+        "author": "Author",
+        "date": "Date",
+        "category": "Category"
+    },
+    "counselling": {
+        "title": "Book Counselling",
+        "subtitle": "Get expert guidance for your career",
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "message": "Message",
+        "submit": "Submit"
+    },
+    "about": {
+        "title": "Empowering Students to Achieve Their Dreams",
+        "subtitle": "Learn more about Career Commando",
+        "description": "Career Commando is more than just a consultancy; we are your partners in success. With over a decade of experience, we've helped thousands of students find their perfect path in India and abroad.",
+        "yearsExperience": "10+ Years",
+        "excellence": "Of Excellence in Educational Consultancy",
+        "learnMore": "Learn More About Us"
+    },
+    "stats": {
+        "totalStudents": "Total Students",
+        "expertCounselors": "Expert Counselors",
+        "successRate": "Success Rate",
+        "partnerColleges": "Partner Colleges"
+    },
+    "destination": {
+        "studyInIndia": "Study in India",
+        "studyAbroad": "Study Abroad",
+        "exploreColleges": "Explore Colleges"
+    },
+    "heroStats": {
+        "expertCounselors": "Expert Counselors",
+        "successRate": "Success Rate",
+        "support": "Support"
+    },
+    "services": {
+        "personalizedCounselling": "Personalized Counselling",
+        "admissionGuidance": "Admission Guidance",
+        "careerPathMapping": "Career Path Mapping",
+        "interviewPreparation": "Interview Preparation",
+        "documentAssistance": "Document Assistance",
+        "scholarshipSupport": "Scholarship Support",
+        "counselling": "Counselling",
+        "admissionSupport": "Admission Support",
+        "testPrep": "Test Prep",
+        "scholarship": "Scholarship",
+        "visaAssistance": "Visa Assistance"
+    },
+    "footerLinks": {
+        "home": "Home",
+        "courses": "Courses",
+        "aboutUs": "About Us",
+        "blog": "Blog",
+        "viewOnMap": "View on Map",
+        "nominations": "Nominations",
+        "sponsorship": "Sponsorship",
+        "helpline": "Helpline",
+        "office": "Office"
+    },
+    "collegeTypes": {
+        "government": "Government",
+        "private": "Private"
+    },
+    "collegeCategories": {
+        "engineering": "Engineering",
+        "medical": "Medical",
+        "commerce": "Commerce",
+        "arts": "Arts"
+    },
+    "topCourses": {
+        "title": "Top Courses",
+        "subtitle": "Explore our comprehensive range of professional courses designed to shape your future",
+        "viewAll": "View All Courses",
+        "allCourses": "All Courses",
+        "autoScrolling": "Auto-scrolling through all available courses",
+        "explore": "Explore",
+        "back": "Back"
+    },
+    "partnerInstitutions": {
+        "title": "Our Partner Institutions",
+        "subtitle": "Collaborating with India's premier educational institutions"
+    },
+    "servicesSection": {
+        "title": "Our Services",
+        "studentProfile": "Student Profile Analysis",
+        "careerCounseling": "Career Counseling",
+        "courseSelection": "Course/University Selection",
+        "applicationAssistance": "Application & Admission Assistance"
+    },
+    "whyChooseUs": {
+        "title": "Why Choose Us?",
+        "subtitle": "Discover what sets us apart and why thousands of students and families trust us to guide their educational journeys year after year. With a proven track record and unwavering commitment to your success, we stand as your reliable partner at every step.",
+        "counselingHours": "Hours of counseling experience",
+        "branchOffices": "Branch offices with more on the way",
+        "studentsAbroad": "Student places abroad and many more",
+        "yearsExperience": "Years of experience with trust and loyalty"
+    },
+    "latestBlogs": {
+        "title": "Latest Blogs",
+        "subtitle": "Stay updated with our latest articles and insights",
+        "readMore": "Read More",
+        "viewAll": "View All Blogs"
+    }
+}
