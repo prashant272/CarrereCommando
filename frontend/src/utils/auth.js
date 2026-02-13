@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { API_BASE_URL } from '../api';
 
 /**
  * Check if user is authenticated as admin
@@ -29,7 +30,7 @@ export const verifyAdminToken = async () => {
     }
 
     try {
-        const response = await axios.post('http://localhost:5000/api/admin/verify', {
+        const response = await axios.post(`${API_BASE_URL}/admin/verify`, {
             token
         });
         return response.data.valid;

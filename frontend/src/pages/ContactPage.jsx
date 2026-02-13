@@ -7,10 +7,8 @@ const ContactPage = () => {
     const navigate = useNavigate();
 
     const contactNumbers = [
-        { number: '+91 9810 88 2769', label: 'Primary Contact', icon: Phone },
-        { number: '+91 9971 00 2984', label: 'Admissions Desk', icon: Phone },
+        { number: '+91 9319 9319 89', label: 'Primary Contact', icon: Phone },
         { number: '+91 9810 91 0686', label: 'Helpline', icon: Phone },
-        { number: '+91 11-69268754', label: 'Head Office', icon: Phone }
     ];
 
     const contactInfo = [
@@ -23,8 +21,8 @@ const ContactPage = () => {
         {
             icon: Mail,
             title: 'Email Us',
-            content: 'info@careercommando.com',
-            link: 'mailto:info@careercommando.com'
+            content: 'careercommandoo@gmail.com',
+            link: 'mailto:careercommandoo@gmail.com'
         },
         {
             icon: Clock,
@@ -131,28 +129,33 @@ const ContactPage = () => {
                         <h2 className="text-3xl md:text-4xl font-black text-white text-center mb-12">
                             Visit Our Office in <span className="text-yellow-400">Noida, Delhi NCR</span>
                         </h2>
-                        <div className="grid md:grid-cols-3 gap-8">
-                            {contactInfo.map((info, idx) => (
-                                <div
-                                    key={idx}
-                                    className="bg-gradient-to-br from-white/10 via-[#1b1832eb] to-[#2d190778] rounded-3xl p-8 border-2 border-[#FFA726]/60 backdrop-blur-md hover:scale-105 transition-transform duration-300"
+                        <div className="grid md:grid-cols-2 gap-8">
+                            <div className="bg-gradient-to-br from-white/10 via-[#1b1832eb] to-[#2d190778] rounded-3xl p-8 border-2 border-[#FFA726]/60 backdrop-blur-md hover:scale-105 transition-transform duration-300">
+                                <MapPin className="w-12 h-12 text-yellow-400 mb-4" />
+                                <h3 className="text-2xl font-black text-white mb-2">Head Office (Delhi)</h3>
+                                <p className="text-gray-200 mb-4">Prime Time Research Media Pvt. Ltd, C-31, Nawada Housing Complex, New Delhi-59</p>
+                                <a
+                                    href="https://maps.google.com/?q=C-31,+Nawada+Housing+Complex,+New+Delhi-59"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-yellow-400 hover:text-white transition-colors font-bold uppercase tracking-wider flex items-center gap-2"
                                 >
-                                    <info.icon className="w-12 h-12 text-yellow-400 mb-4" />
-                                    <h3 className="text-2xl font-black text-white mb-4">{info.title}</h3>
-                                    {info.link ? (
-                                        <a
-                                            href={info.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-gray-200 hover:text-yellow-400 transition-colors whitespace-pre-line"
-                                        >
-                                            {info.content}
-                                        </a>
-                                    ) : (
-                                        <p className="text-gray-200 whitespace-pre-line">{info.content}</p>
-                                    )}
-                                </div>
-                            ))}
+                                    View on Map <Send className="w-4 h-4" />
+                                </a>
+                            </div>
+                            <div className="bg-gradient-to-br from-white/10 via-[#1b1832eb] to-[#2d190778] rounded-3xl p-8 border-2 border-[#FFA726]/60 backdrop-blur-md hover:scale-105 transition-transform duration-300">
+                                <MapPin className="w-12 h-12 text-yellow-400 mb-4" />
+                                <h3 className="text-2xl font-black text-white mb-2">Mumbai Office</h3>
+                                <p className="text-gray-200 mb-4">SGS, 1 Aerocity Corporate Park, 7th Floor - 7026, Andheri - Kurla Rd Safed Pool Shivaji Nagar, Jarimari, Saki Naka, Mumbai, Maharashtra 400072</p>
+                                <a
+                                    href="https://maps.google.com/?q=SGS,+1+Aerocity+Corporate+Park,+Andheri+Kurla+Rd,+Mumbai"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-yellow-400 hover:text-white transition-colors font-bold uppercase tracking-wider flex items-center gap-2"
+                                >
+                                    View on Map <Send className="w-4 h-4" />
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </section>

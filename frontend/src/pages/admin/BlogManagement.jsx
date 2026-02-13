@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Plus, Edit, Trash2, Eye } from 'lucide-react';
 import axios from 'axios';
+import { API_BASE_URL } from '../../api';
 import { useAdminBlogs } from '../../hooks/useBlogs';
 import { useQueryClient } from '@tanstack/react-query';
 import BlogForm from '../../components/admin/BlogForm';
@@ -17,7 +18,7 @@ const BlogManagement = () => {
         if (!window.confirm('Are you sure you want to delete this blog?')) return;
 
         try {
-            await axios.delete(`http://localhost:5000/api/blogs/${id}`);
+            await axios.delete(`${API_BASE_URL}/blogs/${id}`);
             // Invalidate cache to refetch data
             queryClient.invalidateQueries({ queryKey: ['blogs'] });
         } catch (error) {

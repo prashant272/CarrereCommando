@@ -30,18 +30,24 @@ async function getCachedOrGenerateUrl(blog) {
         return { url: blog.cachedPresignedUrl, updated: false };
     }
 
-    // Generate new presigned URL
-    console.log(`⟳ Generating new presigned URL for blog: ${blog.slug}`);
-    const presignedUrl = await getPresignedUrl(blog.thumbnailUrl);
+    try {
+        // Generate new presigned URL
+        console.log(`⟳ Generating new presigned URL for blog: ${blog.slug}`);
+        const presignedUrl = await getPresignedUrl(blog.thumbnailUrl);
 
-    // Cache expires in 7 days (same as presigned URL validity)
-    const expiresAt = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
+        // Cache expires in 7 days (same as presigned URL validity)
+        const expiresAt = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
 
-    // Update cache
-    blog.cachedPresignedUrl = presignedUrl;
-    blog.urlExpiresAt = expiresAt;
+        // Update cache
+        blog.cachedPresignedUrl = presignedUrl;
+        blog.urlExpiresAt = expiresAt;
 
-    return { url: presignedUrl, updated: true };
+        return { url: presignedUrl, updated: true };
+    } catch (error) {
+        console.error(`❌ Failed to generate presigned URL for ${blog.slug}:`, error.message);
+        // Fallback to original key so the app doesn't crash
+        return { url: blog.thumbnailUrl, updated: false };
+    }
 }
 
 
@@ -129,9 +135,14 @@ export const getBlogBySlug = async (req, res) => {
         let cacheUpdated = false;
 
         if (blogObj.thumbnailUrl && blogObj.thumbnailUrl.startsWith('career-commando/')) {
-            const { url, updated } = await getCachedOrGenerateUrl(blog);
-            blogObj.thumbnailUrl = url;
-            cacheUpdated = updated;
+            try {
+                const { url, updated } = await getCachedOrGenerateUrl(blog);
+                blogObj.thumbnailUrl = url;
+                cacheUpdated = updated;
+            } catch (error) {
+                console.error(`❌ Failed to generate presigned URL for ${blog.slug}:`, error.message);
+                // blogObj.thumbnailUrl already has the original key
+            }
         }
 
         // Save blog (for view count and potentially cache update)

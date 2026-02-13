@@ -5,9 +5,7 @@ import {
     Phone,
     MapPin,
     Facebook,
-    Twitter,
     Instagram,
-    Linkedin,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -41,10 +39,15 @@ const Footer = () => {
                             {t('about.description')}
                         </p>
                         <div className="flex gap-4">
-                            {[Facebook, Twitter, Instagram, Linkedin].map((Icon, idx) => (
+                            {[
+                                { Icon: Facebook, href: 'https://www.facebook.com/profile.php?viewas=100000686899395&id=61571714667441' },
+                                { Icon: Instagram, href: 'https://www.instagram.com/careercommando/' }
+                            ].map(({ Icon, href }, idx) => (
                                 <a
                                     key={idx}
-                                    href="#"
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="p-3 bg-white/5 border border-white/10 rounded-xl text-white hover:text-primary hover:border-primary hover:bg-primary/10 hover:scale-110 transition-all duration-300"
                                 >
                                     <Icon className="w-5 h-5" />
@@ -115,20 +118,19 @@ const Footer = () => {
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     <span className="text-white font-bold">Head Office</span>
-                                    <span className="text-white">Prime Time Research Media Pvt. Ltd</span>
-                                    <span className="text-white">C-31, Nawada Housing Complex</span>
-                                    <span className="text-white">New Delhi - 110059</span>
+                                    <span className="text-white">Prime Time Research Media Pvt. Ltd, C-31, Nawada Housing Complex, New Delhi - 110059</span>
+
+                                    <span className="text-white font-bold mt-4">Mumbai Office</span>
+                                    <span className="text-white">SGS, 1 Aerocity Corporate Park, 7th Floor - 7026, Andheri - Kurla Rd Safed Pool Shivaji Nagar, Jarimari, Saki Naka, Mumbai, Maharashtra 400072</span>
+
                                     <a
-                                        href="https://maps.google.com/?q=C-31,+Nawada+Housing+Complex,+New+Delhi-110059"
+                                        href="https://maps.google.com/?q=SGS,+1+Aerocity+Corporate+Park,+Andheri+Kurla+Rd,+Mumbai"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="text-primary hover:text-primary/80 transition-colors font-bold text-xs uppercase tracking-wider mt-1"
                                     >
                                         {t('footerLinks.viewOnMap')} →
                                     </a>
-
-                                    <span className="text-white font-bold mt-3">Branch Offices</span>
-                                    <span className="text-white">Bangalore | Mumbai | Hyderabad | Chennai</span>
                                 </div>
                             </li>
 
@@ -138,16 +140,10 @@ const Footer = () => {
                                 </div>
                                 <div className="flex flex-col gap-1">
                                     <a
-                                        href="tel:+919810882769"
-                                        className="text-white hover:text-primary transition-colors"
+                                        href="tel:+919319931989"
+                                        className="text-white hover:text-primary transition-colors font-bold text-lg"
                                     >
-                                        +91 9810 88 2769{' '}
-                                    </a>
-                                    <a
-                                        href="tel:+919971002984"
-                                        className="text-white hover:text-primary transition-colors"
-                                    >
-                                        +91 9971 00 2984{' '}
+                                        +91 9319 9319 89
                                     </a>
                                     <a
                                         href="tel:+919810910686"
@@ -156,20 +152,18 @@ const Footer = () => {
                                         +91 9810 91 0686{' '}
                                         <span className="text-xs">({t('footerLinks.helpline')})</span>
                                     </a>
-                                    <a
-                                        href="tel:+911169268754"
-                                        className="text-white hover:text-primary transition-colors"
-                                    >
-                                        +91 11-69268754{' '}
-                                        <span className="text-xs">(Head Office)</span>
-                                    </a>
                                 </div>
                             </li>
                             <li className="flex gap-4 text-sm font-medium">
                                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                                     <Mail className="w-5 h-5 text-primary" />
                                 </div>
-                                <span className="text-white">info@careercommando.com</span>
+                                <a
+                                    href="mailto:careercommandoo@gmail.com"
+                                    className="text-white hover:text-primary transition-colors"
+                                >
+                                    careercommandoo@gmail.com
+                                </a>
                             </li>
                         </ul>
 

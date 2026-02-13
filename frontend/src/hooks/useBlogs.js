@@ -1,7 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api';
+import { API_BASE_URL } from '../api';
+
+const API_URL = API_BASE_URL;
 
 // Fetch all blogs or by category
 export const useBlogs = (category = 'all') => {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../../api';
 import { Eye, X, Phone, Mail, MapPin, GraduationCap, School } from 'lucide-react';
 
 const CounsellingManagement = () => {
@@ -14,7 +15,7 @@ const CounsellingManagement = () => {
 
     const fetchCounsellings = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/contact/all');
+            const response = await axios.get(`${API_BASE_URL}/contact/all`);
             setCounsellings(response.data);
         } catch (error) {
             console.error('Error fetching counsellings:', error);

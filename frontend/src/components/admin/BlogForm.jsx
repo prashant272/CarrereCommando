@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, Upload, Loader } from 'lucide-react';
 import axios from 'axios';
+import { API_BASE_URL } from '../../api';
 
 const BlogForm = ({ onClose, onSuccess, editBlog = null }) => {
     const [formData, setFormData] = useState({
@@ -34,7 +35,7 @@ const BlogForm = ({ onClose, onSuccess, editBlog = null }) => {
         formDataUpload.append('image', thumbnailFile);
 
         try {
-            const response = await axios.post('http://localhost:5000/api/blogs/upload-image', formDataUpload);
+            const response = await axios.post(`${API_BASE_URL}/blogs/upload-image`, formDataUpload);
             return response.data.key; // Return S3 key
         } catch (err) {
             console.error('Upload error:', err);
@@ -68,9 +69,9 @@ const BlogForm = ({ onClose, onSuccess, editBlog = null }) => {
             };
 
             if (editBlog) {
-                await axios.put(`http://localhost:5000/api/blogs/${editBlog._id}`, blogData);
+                await axios.put(`${API_BASE_URL}/blogs/${editBlog._id}`, blogData);
             } else {
-                await axios.post('http://localhost:5000/api/blogs', blogData);
+                await axios.post(`${API_BASE_URL}/blogs`, blogData);
             }
 
             onSuccess();
