@@ -1,12 +1,12 @@
 {
     "nav": {
         "home": "Home",
-        "about": "About Us",
-        "mba": "MBA Updates",
-        "engineering": "Engineering Updates",
-        "neet": "NEET Updates",
-        "blogs": "Blogs",
-        "contact": "Contact Us",
+        "about": "About",
+        "mba": "MBA",
+        "engineering": "Engineering",
+        "neet": "NEET",
+        "blogs": "Blog",
+        "contact": "Contact",
         "bookCounselling": "Book Counselling"
     },
     "hero": {
