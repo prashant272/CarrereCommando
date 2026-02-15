@@ -322,7 +322,7 @@ const AboutPage = () => {
                                 onClick={() => navigate('/counselling')}
                                 className="px-8 py-4 bg-gradient-to-r from-yellow-300 via-yellow-400 to-orange-400 text-dark font-extrabold rounded-xl border-2 border-[#FFA726] hover:scale-105 active:scale-95 transition-all shadow-2xl text-lg"
                             >
-                                📞 Book Free Counselling Today
+                                📞 Book Counselling Today
                             </button>
                             <button
                                 onClick={() => navigate('/counselling')}

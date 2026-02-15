@@ -15,7 +15,7 @@ const ContactPage = () => {
         {
             icon: MapPin,
             title: 'Visit Our Office',
-            content: 'Prime Time Research Media Pvt. Ltd, C-31, Nawada Housing Complex, New Delhi-59',
+            content: 'C-31, Nawada Housing Complex, New Delhi-59',
             link: 'https://maps.google.com/?q=C-31,+Nawada+Housing+Complex,+New+Delhi-59'
         },
         {
@@ -41,7 +41,7 @@ const ContactPage = () => {
 
                 <meta
                     name="description"
-                    content="Contact Career Commando, a trusted MBBS abroad and engineering admission consultant in India. Get expert guidance for MBBS in Russia, MBBS in Kazakhstan, BTech admission in India, Engineering in Canada, and Study in USA. Book free counselling today."
+                    content="Contact Career Commando, a trusted MBBS abroad and engineering admission consultant in India. Get expert guidance for MBBS in Russia, MBBS in Kazakhstan, BTech admission in India, Engineering in Canada, and Study in USA. Book expert counselling today."
                 />
 
                 <meta
@@ -54,7 +54,7 @@ const ContactPage = () => {
                 {/* Open Graph */}
                 <meta property="og:title" content="Contact Career Commando – MBBS Abroad & Engineering Admission Consultant in India" />
                 <meta property="og:description"
-                    content="Get expert counselling for MBBS abroad and Engineering admission in India. Contact Career Commando today for free guidance."
+                    content="Get expert counselling for MBBS abroad and Engineering admission in India. Contact Career Commando today for expert guidance."
                 />
                 <meta property="og:url" content="https://careercommando.com/contact" />
                 <meta property="og:type" content="website" />
@@ -64,7 +64,7 @@ const ContactPage = () => {
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Contact Career Commando – Trusted Education Consultant in India" />
                 <meta name="twitter:description"
-                    content="Get expert counselling for MBBS abroad and Engineering admission. Contact us for free guidance."
+                    content="Get expert counselling for MBBS abroad and Engineering admission. Contact us for expert guidance."
                 />
             </Helmet>
 
@@ -133,7 +133,7 @@ const ContactPage = () => {
                             <div className="bg-gradient-to-br from-white/10 via-[#1b1832eb] to-[#2d190778] rounded-3xl p-8 border-2 border-[#FFA726]/60 backdrop-blur-md hover:scale-105 transition-transform duration-300">
                                 <MapPin className="w-12 h-12 text-yellow-400 mb-4" />
                                 <h3 className="text-2xl font-black text-white mb-2">Head Office (Delhi)</h3>
-                                <p className="text-gray-200 mb-4">Prime Time Research Media Pvt. Ltd, C-31, Nawada Housing Complex, New Delhi-59</p>
+                                <p className="text-gray-200 mb-4">C-31, Nawada Housing Complex, New Delhi-59</p>
                                 <a
                                     href="https://maps.google.com/?q=C-31,+Nawada+Housing+Complex,+New+Delhi-59"
                                     target="_blank"
@@ -215,11 +215,11 @@ const ContactPage = () => {
                     </div>
                 </section>
 
-                {/* Book Free Counselling Section */}
+                {/* Book Expert Counselling Section */}
                 <section className="relative py-12 md:py-16 px-4">
                     <div className="max-w-5xl mx-auto relative z-10">
                         <h2 className="text-3xl md:text-4xl font-black text-white text-center mb-8">
-                            Book Free <span className="text-yellow-400">Career Counselling in India</span>
+                            Book <span className="text-yellow-400">Expert Career Counselling in India</span>
                         </h2>
                         <div className="bg-gradient-to-br from-white/10 via-[#1b1832eb] to-[#2d190778] rounded-3xl p-8 md:p-12 border-2 border-[#FFA726]/60 backdrop-blur-md text-center">
                             <p className="text-gray-200 text-lg mb-8 leading-relaxed">
@@ -231,7 +231,7 @@ const ContactPage = () => {
                                     className="px-8 py-4 bg-gradient-to-r from-yellow-300 via-yellow-400 to-orange-400 text-dark font-extrabold rounded-xl border-2 border-[#FFA726] hover:scale-105 active:scale-95 transition-all shadow-2xl text-lg flex items-center justify-center gap-2"
                                 >
                                     <Send className="w-5 h-5" />
-                                    Book Free Counselling
+                                    Book Counselling
                                 </button>
                                 <a
                                     href="https://wa.me/919810910686"

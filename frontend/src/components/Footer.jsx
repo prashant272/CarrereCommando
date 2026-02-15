@@ -118,7 +118,7 @@ const Footer = () => {
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     <span className="text-white font-bold">Head Office</span>
-                                    <span className="text-white">Prime Time Research Media Pvt. Ltd, C-31, Nawada Housing Complex, New Delhi - 110059</span>
+                                    <span className="text-white">C-31, Nawada Housing Complex, New Delhi - 110059</span>
 
                                     <span className="text-white font-bold mt-4">Mumbai Office</span>
                                     <span className="text-white">SGS, 1 Aerocity Corporate Park, 7th Floor - 7026, Andheri - Kurla Rd Safed Pool Shivaji Nagar, Jarimari, Saki Naka, Mumbai, Maharashtra 400072</span>
