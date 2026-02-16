@@ -97,7 +97,7 @@ const CounsellingPage = () => {
 
     return (
         <div
-            className="min-h-screen pt-32 pb-24"
+            className="min-h-screen pt-16 md:pt-20 pb-24"
             style={{
                 background: 'linear-gradient(120deg, #090e23 0%, #183478 65%, #e7b71a 100%)'
             }}

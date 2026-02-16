@@ -74,7 +74,7 @@ const ContactPage = () => {
                 <div className="absolute top-1/2 -right-24 w-96 h-96 bg-[#fff8e1a0] rounded-full blur-[100px] opacity-50 z-0 pointer-events-none"></div>
 
                 {/* Hero Section */}
-                <section className="relative pt-24 md:pt-32 pb-12 md:pb-16 px-4">
+                <section className="relative pt-16 md:pt-20 pb-12 md:pb-16 px-4">
                     <div className="max-w-7xl mx-auto text-center relative z-10">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 drop-shadow-2xl">
                             Contact <span className="bg-gradient-to-r from-yellow-200 to-yellow-500 bg-clip-text text-transparent">Career Commando</span>

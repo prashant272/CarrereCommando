@@ -17,12 +17,11 @@ const NEETPage = () => {
 
     return (
         <section
-            className="relative pt-32 pb-24 min-h-screen overflow-hidden bg-gradient-to-br from-[#222031] via-[#100c2e] to-[#43290b]"
+            className="relative pt-24 md:pt-32 pb-24 min-h-screen overflow-hidden bg-gradient-to-br from-[#222031] via-[#100c2e] to-[#43290b]"
         >
             {/* Blurred luxurious background shapes to match DestinationPicker / Engineering */}
             <div className="absolute -top-10 -left-20 w-96 h-96 bg-[#e7b56733] rounded-full blur-[110px] opacity-60 pointer-events-none z-0"></div>
             <div className="absolute bottom-0 -right-24 w-96 h-96 bg-[#fff8e1a0] rounded-full blur-[100px] opacity-50 z-0 pointer-events-none"></div>
-            <div className="absolute inset-0 bg-gradient-to-br from-[#222031] via-[#100c2e] to-[#43290b] -z-10"></div>
 
             <div className="max-w-7xl mx-auto px-4 relative z-10">
                 {/* Header */}
