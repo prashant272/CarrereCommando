@@ -195,7 +195,7 @@ const CityCollegesPage = () => {
     };
 
     return (
-        <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#222031] via-[#100c2e] to-[#43290b] pt-24 md:pt-32 pb-16 md:pb-24">
+        <div className="min-h-screen bg-gradient-to-br from-[#222031] via-[#100c2e] to-[#43290b] overflow-hidden pt-24 md:pt-32 pb-16 md:pb-24">
             {/* Blurred light background shapes like DestinationPicker */}
             <div className="absolute -top-10 -left-20 w-96 h-96 bg-[#e7b56733] rounded-full blur-[110px] opacity-60 pointer-events-none z-0"></div>
             <div className="absolute bottom-0 -right-24 w-96 h-96 bg-[#fff8e1a0] rounded-full blur-[100px] opacity-50 z-0 pointer-events-none"></div>
@@ -267,7 +267,7 @@ const CityCollegesPage = () => {
                     ))}
                 </div>
             </div>
-        </section>
+        </div>
     );
 };
 

@@ -86,7 +86,7 @@ const AboutPage = () => {
                 />
             </Helmet>
 
-            <div className="min-h-screen bg-gradient-to-br from-[#222031] via-[#100c2e] to-[#43290b]">
+            <div className="min-h-screen bg-gradient-to-br from-[#222031] via-[#100c2e] to-[#43290b] overflow-hidden">
                 {/* Blurred background shapes */}
                 <div className="absolute -top-10 -left-20 w-96 h-96 bg-[#e7b56733] rounded-full blur-[110px] opacity-60 pointer-events-none z-0"></div>
                 <div className="absolute top-1/2 -right-24 w-96 h-96 bg-[#fff8e1a0] rounded-full blur-[100px] opacity-50 z-0 pointer-events-none"></div>

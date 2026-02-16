@@ -34,7 +34,7 @@ const BlogPage = () => {
             {/* Luxurious Blurred Light background shapes (like DestinationPicker, but background of whole page not inside cards) */}
             <div className="absolute -top-10 -left-20 w-96 h-96 bg-[#e7b56733] rounded-full blur-[110px] opacity-60 pointer-events-none z-0"></div>
             <div className="absolute bottom-0 -right-24 w-96 h-96 bg-[#fff8e1a0] rounded-full blur-[100px] opacity-50 z-0 pointer-events-none"></div>
-            <div className="absolute inset-0 bg-gradient-to-br from-[#222031] via-[#100c2e] to-[#43290b] -z-10"></div>
+            <div className="min-h-screen bg-gradient-to-br from-[#222031] via-[#100c2e] to-[#43290b] overflow-hidden -z-10"></div>
 
             <div className="max-w-7xl mx-auto px-4 relative z-10">
                 {/* Header */}
@@ -52,8 +52,8 @@ const BlogPage = () => {
                             key={cat.id}
                             onClick={() => setSelectedCategory(cat.id)}
                             className={`px-7 py-3 rounded-full font-black uppercase tracking-widest transition-all duration-300 shadow-md border-2 ${selectedCategory === cat.id
-                                    ? 'bg-gradient-to-r from-[#FFD700] via-[#FFC872] to-[#FF9800] text-[#43290b] border-[#FFD700]/80 shadow-xl'
-                                    : 'bg-white/5 text-[#FFD700] border-[#FFD700]/30 hover:bg-[#FFD700]/20 hover:text-white'
+                                ? 'bg-gradient-to-r from-[#FFD700] via-[#FFC872] to-[#FF9800] text-[#43290b] border-[#FFD700]/80 shadow-xl'
+                                : 'bg-white/5 text-[#FFD700] border-[#FFD700]/30 hover:bg-[#FFD700]/20 hover:text-white'
                                 }`}
                         >
                             {cat.label}

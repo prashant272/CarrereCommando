@@ -45,7 +45,7 @@ function App() {
 
         {/* Public Routes (with navbar/footer) */}
         <Route path="/*" element={
-          <div className="min-h-screen bg-gray-50">
+          <div className="min-h-screen bg-gray-50 overflow-x-hidden w-full max-w-[100vw]">
             <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
