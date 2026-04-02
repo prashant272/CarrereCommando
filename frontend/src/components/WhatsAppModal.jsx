@@ -1,5 +1,5 @@
 export default function WhatsAppButton() {
-    const whatsappNumber = "+919810882769";
+    const whatsappNumber = "+919319931989";
     const message = "Hello, I'm interested in Career Commando.";
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/\D/g, "")}?text=${encodedMessage}`;

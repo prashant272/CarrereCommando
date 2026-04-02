@@ -145,13 +145,6 @@ const Footer = () => {
                                     >
                                         +91 9319 9319 89
                                     </a>
-                                    <a
-                                        href="tel:+919810910686"
-                                        className="text-white hover:text-primary transition-colors"
-                                    >
-                                        +91 9810 91 0686{' '}
-                                        <span className="text-xs">({t('footerLinks.helpline')})</span>
-                                    </a>
                                 </div>
                             </li>
                             <li className="flex gap-4 text-sm font-medium">
@@ -171,10 +164,20 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="pt-12 border-t border-white/10 text-center">
+                <div className="pt-12 border-t border-white/10 flex flex-col items-center gap-6">
                     <p className="text-white text-xs tracking-widest font-black uppercase">
                         © 2026 CAREER COMMANDO. ALL RIGHTS RESERVED.
                     </p>
+                    <a
+                        href="https://www.primeimpact.in/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center gap-3 px-6 py-2.5 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 hover:border-primary/50 transition-all duration-300 backdrop-blur-sm"
+                    >
+                        <span className="text-white/50 text-[10px] font-bold uppercase tracking-[0.2em]">Designed & Developed by</span>
+                        <div className="h-4 w-[1px] bg-white/10 group-hover:bg-primary/50 transition-colors"></div>
+                        <span className="text-primary font-black uppercase text-[10px] tracking-[0.2em] group-hover:text-white transition-colors">Prime Impact Solutions</span>
+                    </a>
                 </div>
             </div>
         </footer>
