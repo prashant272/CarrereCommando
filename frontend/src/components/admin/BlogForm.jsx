@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Upload, Loader } from 'lucide-react';
+import { X, Upload, Loader, Sparkles } from 'lucide-react';
 import axios from 'axios';
 import { API_BASE_URL } from '../../api';
 
@@ -17,7 +17,33 @@ const BlogForm = ({ onClose, onSuccess, editBlog = null }) => {
     const [thumbnailPreview, setThumbnailPreview] = useState(editBlog?.thumbnailUrl || '');
     const [uploading, setUploading] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [generatingAI, setGeneratingAI] = useState(false);
+    const [aiTopic, setAiTopic] = useState('');
     const [error, setError] = useState('');
+
+    const handleAIGenerate = async () => {
+        if (!aiTopic) {
+            setError('Please enter a topic or college name to generate blog');
+            return;
+        }
+        setGeneratingAI(true);
+        setError('');
+        try {
+            const response = await axios.post(`${API_BASE_URL}/blogs/generate-ai`, { topic: aiTopic });
+            const { title, excerpt, content } = response.data;
+            setFormData(prev => ({
+                ...prev,
+                title: title || prev.title,
+                excerpt: excerpt || prev.excerpt,
+                content: content || prev.content
+            }));
+        } catch (err) {
+            console.error(err);
+            setError(err.response?.data?.message || 'Failed to generate AI content');
+        } finally {
+            setGeneratingAI(false);
+        }
+    };
 
     const handleThumbnailChange = (e) => {
         const file = e.target.files[0];
@@ -101,6 +127,40 @@ const BlogForm = ({ onClose, onSuccess, editBlog = null }) => {
 
                 {/* Form */}
                 <form onSubmit={handleSubmit} className="p-6 space-y-6 max-h-[calc(100vh-200px)] overflow-y-auto">
+                    {/* AI Generation Section */}
+                    {!editBlog && (
+                        <div className="bg-gradient-to-r from-primary/10 to-purple-500/10 border border-primary/20 rounded-xl p-6">
+                            <div className="flex items-center gap-2 mb-4">
+                                <Sparkles className="w-5 h-5 text-primary animate-pulse" />
+                                <h3 className="text-lg font-bold text-white">Generate content with AI</h3>
+                            </div>
+                            <div className="flex flex-col md:flex-row gap-4">
+                                <input
+                                    type="text"
+                                    value={aiTopic}
+                                    onChange={(e) => setAiTopic(e.target.value)}
+                                    placeholder="Enter college name or topic (e.g. IIT Madras Admission Process)"
+                                    className="flex-1 px-4 py-3 bg-dark/50 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary"
+                                />
+                                <button
+                                    type="button"
+                                    onClick={handleAIGenerate}
+                                    disabled={generatingAI || !aiTopic}
+                                    className="btn-primary whitespace-nowrap flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                                >
+                                    {generatingAI ? (
+                                        <><Loader className="w-4 h-4 animate-spin" /> Generating...</>
+                                    ) : (
+                                        <><Sparkles className="w-4 h-4" /> Generate Blog</>
+                                    )}
+                                </button>
+                            </div>
+                            <p className="text-xs text-gray-400 mt-3">
+                                Automatically writes structured content covering introduction, location, admissions, and 5-year placements.
+                            </p>
+                        </div>
+                    )}
+
                     {/* Title */}
                     <div>
                         <label className="block text-sm font-bold text-gray-300 mb-2">

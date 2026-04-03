@@ -1,7 +1,7 @@
 import Blog from '../models/Blog.js';
 import { uploadToS3, getPresignedUrl, deleteFromS3 } from '../utils/s3.js';
 import multer from 'multer';
-
+import { GoogleGenAI } from '@google/genai';
 // Configure multer for memory storage
 const storage = multer.memoryStorage();
 export const upload = multer({
@@ -211,6 +211,12 @@ export const createBlog = async (req, res) => {
             return res.status(400).json({ message: 'Title, excerpt, and content are required' });
         }
 
+        let finalExcerpt = excerpt;
+        if (finalExcerpt.length > 300) {
+            finalExcerpt = finalExcerpt.substring(0, 297) + '...';
+        }
+
+
         // Create slug from title
         const slug = title
             .toLowerCase()
@@ -226,7 +232,7 @@ export const createBlog = async (req, res) => {
         const blog = new Blog({
             title,
             slug,
-            excerpt,
+            excerpt: finalExcerpt,
             content,
             thumbnailUrl: thumbnailUrl || '',
             category: category || 'General',
@@ -262,7 +268,9 @@ export const updateBlog = async (req, res) => {
                 .replace(/[^a-z0-9]+/g, '-')
                 .replace(/(^-|-$)/g, '');
         }
-        if (excerpt) blog.excerpt = excerpt;
+        if (excerpt) {
+            blog.excerpt = excerpt.length > 300 ? excerpt.substring(0, 297) + '...' : excerpt;
+        }
         if (content) blog.content = content;
         if (category) blog.category = category;
         if (tags) blog.tags = tags.split(',').map(tag => tag.trim());
@@ -330,5 +338,72 @@ export const uploadBlogImage = async (req, res) => {
     } catch (error) {
         console.error('Upload Image Error:', error);
         res.status(500).json({ message: 'Failed to upload image', error: error.message });
+    }
+};
+
+// @desc    Generate AI Blog
+// @route   POST /api/blogs/generate-ai
+// @access  Private (Admin only)
+export const generateAIBlog = async (req, res) => {
+    try {
+        const { topic } = req.body;
+        
+        if (!topic) {
+            return res.status(400).json({ message: 'Topic is required to generate AI blog' });
+        }
+        
+        if (!process.env.GEMINI_API_KEY) {
+            return res.status(500).json({ message: 'GEMINI_API_KEY not configured in backend' });
+        }
+
+        const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+        
+        const systemPrompt = `You are an expert educational content writer. The user will provide ONLY the name of a college or university.
+Your job is to generate a highly comprehensive, detailed, and completely structured blog post about this specific college. 
+IMPORTANT: You MUST write in VERY SIMPLE ENGLISH words so that any student can easily understand it. Avoid heavy jargon.
+
+The content MUST be in HTML format without the \`\`\`html wrapper. Do not wrap the response in markdown blocks. Do not add <html>, <head>, or <body> tags. Just use tags like <h2>, <h3>, <p>, <ul>, <li>, <strong>, <table>, <tr>, <th>, <td>, etc.
+CRITICAL: Whenever displaying data like "Courses Offered & Fees Structure" or "Placement Statistics", you MUST use well-formatted HTML tables.
+
+Include the following sections clearly formatted with headings:
+1. About the College (Introduction, History, Overview)
+2. Location & Campus Life (Infrastructure, Facilities, Hostels)
+3. Courses Offered & Fees Structure (MUST be in an HTML table showing Course Name, Eligibility, Duration, and Fees)
+4. Admission Process & Eligibility (What exams are accepted, how to apply step-by-step)
+5. Placement Statistics (Deep dive into Average Package, Highest Package, Top Recruiters, and past/Next 5-Year placement trends. Use a table for year-wise placement trends if possible.)
+6. Conclusion
+
+Also provide a catchy "title" and a short "excerpt" (STRICTLY LESS THAN 250 characters, plain text).
+Return your response ONLY as a parseable JSON object with keys "title", "excerpt", and "content" (with the HTML string). Do not add any markdown formatting around the JSON block.`;
+
+        const response = await ai.models.generateContent({
+            model: 'gemini-2.5-flash',
+            contents: `College Name: ${topic}`,
+            config: {
+                systemInstruction: systemPrompt,
+                responseMimeType: "application/json"
+            }
+        });
+        
+        let responseText = response.text;
+        
+        // Remove markdown JSON wrappers if Gemini accidentally includes them despite the prompt
+        if (responseText.startsWith('\`\`\`json')) {
+            responseText = responseText.replace(/^\`\`\`json\n/, '').replace(/\n\`\`\`$/, '');
+        } else if (responseText.startsWith('\`\`\`')) {
+            responseText = responseText.replace(/^\`\`\`\n/, '').replace(/\n\`\`\`$/, '');
+        }
+
+        const blogData = JSON.parse(responseText);
+
+        // Ensure excerpt is strictly within Mongoose bounds
+        if (blogData.excerpt && blogData.excerpt.length > 300) {
+            blogData.excerpt = blogData.excerpt.substring(0, 297) + '...';
+        }
+
+        res.json(blogData);
+    } catch (error) {
+        console.error('Generate AI Blog Error:', error);
+        res.status(500).json({ message: 'Failed to generate AI blog', error: error.message });
     }
 };

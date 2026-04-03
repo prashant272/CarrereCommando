@@ -15,6 +15,7 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.988.0",
     "@aws-sdk/s3-request-presigner": "^3.988.0",
+    "@google/genai": "^1.48.0",
     "@vitalets/google-translate-api": "^9.2.1",
     "cors": "^2.8.6",
     "dotenv": "^17.2.4",
