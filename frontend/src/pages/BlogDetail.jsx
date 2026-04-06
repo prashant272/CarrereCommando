@@ -3,7 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useBlogDetail } from '../hooks/useBlogs';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Calendar, ArrowLeft, Eye, Tag } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
 
 const BlogDetail = () => {
     const { slug } = useParams();
@@ -34,35 +33,13 @@ const BlogDetail = () => {
     }
 
     return (
-        <>
-            {/* Dynamic SEO Meta Tags for Google Ranking */}
-            <Helmet>
-                <title>{blog.title} | Career Commando</title>
-                <meta name="description" content={blog.excerpt} />
-                {blog.tags && blog.tags.length > 0 && (
-                    <meta name="keywords" content={blog.tags.join(', ')} />
-                )}
-                
-                {/* Open Graph / Social Media */}
-                <meta property="og:title" content={blog.title} />
-                <meta property="og:description" content={blog.excerpt} />
-                <meta property="og:type" content="article" />
-                {blog.thumbnailUrl && <meta property="og:image" content={blog.thumbnailUrl} />}
-                
-                {/* Twitter */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={blog.title} />
-                <meta name="twitter:description" content={blog.excerpt} />
-                {blog.thumbnailUrl && <meta name="twitter:image" content={blog.thumbnailUrl} />}
-            </Helmet>
-
-            <div
-                className="relative pt-24 md:pt-32 pb-24 min-h-screen bg-gradient-to-br from-[#222031] via-[#100c2e] to-[#43290b] overflow-hidden"
-                style={{ zIndex: 1 }}
-            >
-                {/* Luxurious Blurred Light background shapes to match DestinationPicker */}
-                <div className="absolute -top-10 -left-20 w-96 h-96 bg-[#e7b56733] rounded-full blur-[110px] opacity-60 pointer-events-none z-0"></div>
-                <div className="absolute bottom-0 -right-24 w-96 h-96 bg-[#fff8e1a0] rounded-full blur-[100px] opacity-50 z-0 pointer-events-none"></div>
+        <div
+            className="relative pt-24 md:pt-32 pb-24 min-h-screen bg-gradient-to-br from-[#222031] via-[#100c2e] to-[#43290b] overflow-hidden"
+            style={{ zIndex: 1 }}
+        >
+            {/* Luxurious Blurred Light background shapes to match DestinationPicker */}
+            <div className="absolute -top-10 -left-20 w-96 h-96 bg-[#e7b56733] rounded-full blur-[110px] opacity-60 pointer-events-none z-0"></div>
+            <div className="absolute bottom-0 -right-24 w-96 h-96 bg-[#fff8e1a0] rounded-full blur-[100px] opacity-50 z-0 pointer-events-none"></div>
 
 
             {/* Back Button */}
@@ -160,7 +137,6 @@ const BlogDetail = () => {
                 </div>
             </article>
         </div>
-        </>
     );
 };
 
