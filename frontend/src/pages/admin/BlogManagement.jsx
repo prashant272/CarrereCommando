@@ -5,6 +5,7 @@ import { API_BASE_URL } from '../../api';
 import { useAdminBlogs } from '../../hooks/useBlogs';
 import { useQueryClient } from '@tanstack/react-query';
 import BlogForm from '../../components/admin/BlogForm';
+import FacebookConnect from '../../components/admin/FacebookConnect';
 
 const BlogManagement = () => {
     const [showForm, setShowForm] = useState(false);
@@ -27,9 +28,16 @@ const BlogManagement = () => {
         }
     };
 
-    const handleEdit = (blog) => {
-        setEditingBlog(blog);
-        setShowForm(true);
+    const handleEdit = async (blog) => {
+        try {
+            // Fetch full blog data because the list API excludes 'content'
+            const response = await axios.get(`${API_BASE_URL}/blogs/${blog.slug}`);
+            setEditingBlog(response.data);
+            setShowForm(true);
+        } catch (error) {
+            console.error('Error fetching full blog details:', error);
+            alert('Failed to load full blog content for editing.');
+        }
     };
 
     const handleCloseForm = () => {
@@ -63,6 +71,9 @@ const BlogManagement = () => {
                     Create New Blog
                 </button>
             </div>
+
+            {/* Facebook Connection Integration */}
+            <FacebookConnect />
 
             {/* Blog List */}
             {blogs.length === 0 ? (

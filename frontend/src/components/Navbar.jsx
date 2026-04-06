@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import ThemeToggle from './ThemeToggle';
-import LanguageSelector from './LanguageSelector';
 import { useLanguage } from '../contexts/LanguageContext';
 
 
@@ -61,8 +59,7 @@ const Navbar = () => {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <div className="flex items-center gap-3 pl-2 border-l border-gray-700/50">
-                <ThemeToggle />
-                <LanguageSelector />
+                {/* Reserved for future icons if needed */}
             </div>
         </>
     );
@@ -118,8 +115,6 @@ const Navbar = () => {
 
                         {/* Mobile Controls */}
                         <div className="flex items-center gap-3">
-                            <ThemeToggle />
-                            <LanguageSelector />
                             <button
                                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                                 className="p-2 text-blue-500 hover:text-blue-400 transition-colors"

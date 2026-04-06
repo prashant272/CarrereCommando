@@ -6,6 +6,7 @@ import contactRoutes from "./routes/contactRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
 import blogRoutes from "./routes/blogRoutes.js";
 import enquiryRoutes from "./routes/enquiryRoutes.js";
+import facebookRoutes from "./routes/facebookRoutes.js";
 
 
 dotenv.config();
@@ -25,8 +26,9 @@ app.use("/api/contact", contactRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/blogs", blogRoutes);
 app.use("/api/enquiry", enquiryRoutes);
+app.use("/api/facebook", facebookRoutes);
 
-console.log('✅ Routes mounted: /api/contact, /api/admin, /api/blogs, /api/enquiry');
+console.log('✅ Routes mounted: /api/contact, /api/admin, /api/blogs, /api/enquiry, /api/facebook');
 
 
 const PORT = process.env.PORT || 5000;

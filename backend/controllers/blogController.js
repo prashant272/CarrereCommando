@@ -2,6 +2,8 @@ import Blog from '../models/Blog.js';
 import { uploadToS3, getPresignedUrl, deleteFromS3 } from '../utils/s3.js';
 import multer from 'multer';
 import { GoogleGenAI } from '@google/genai';
+import sharp from 'sharp';
+import FacebookConfig from '../models/FacebookConfig.js';
 // Configure multer for memory storage
 const storage = multer.memoryStorage();
 export const upload = multer({
@@ -15,6 +17,43 @@ export const upload = multer({
         }
     }
 });
+
+// Helper for Facebook Auto Post
+const triggerFacebookPost = async (blog) => {
+    try {
+        const config = await FacebookConfig.findOne();
+        if (!config || !config.pageAccessToken) return;
+
+        // Always use the real live domain so Facebook creates a big clickable preview card!
+        const liveDomain = "https://www.careercommando.in";
+        const blogUrl = `${liveDomain}/blog/${blog.slug}`;
+        const message = `🌟 New Post: ${blog.title}\n\n${blog.excerpt}\n\nRead more here: ${blogUrl}`;
+
+        // Construct payload with strict 'link' attachment, because the URL is now a live domain!
+        const payload = {
+            message: message,
+            link: blogUrl,
+            access_token: config.pageAccessToken
+        };
+
+        const fbResponse = await fetch(`https://graph.facebook.com/v19.0/${config.pageId}/feed`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        });
+
+        const fbData = await fbResponse.json();
+        if (fbData.error) {
+            console.error('FB Auto-Post Graph Error:', fbData.error.message);
+        } else {
+            console.log(`✅ Auto-posted to Facebook: ${fbData.id}`);
+        }
+    } catch (error) {
+        console.error('Error triggering FB Post:', error);
+    }
+};
 
 /**
  * Get cached presigned URL or generate new one if expired
@@ -241,6 +280,12 @@ export const createBlog = async (req, res) => {
         });
 
         await blog.save();
+        
+        // Auto-post to Facebook if published
+        if (blog.status === 'published') {
+            triggerFacebookPost(blog);
+        }
+        
         res.status(201).json(blog);
     } catch (error) {
         console.error('Create Blog Error:', error);
@@ -274,11 +319,17 @@ export const updateBlog = async (req, res) => {
         if (content) blog.content = content;
         if (category) blog.category = category;
         if (tags) blog.tags = tags.split(',').map(tag => tag.trim());
+        const wasDraft = blog.status !== 'published';
         if (status) blog.status = status;
         if (thumbnailUrl !== undefined) blog.thumbnailUrl = thumbnailUrl;
 
-
         await blog.save();
+
+        // Auto-post to Facebook if transitioned to published
+        if (wasDraft && blog.status === 'published') {
+            triggerFacebookPost(blog);
+        }
+
         res.json(blog);
     } catch (error) {
         console.error('Update Blog Error:', error);
@@ -322,10 +373,19 @@ export const uploadBlogImage = async (req, res) => {
             return res.status(400).json({ message: 'No image file provided' });
         }
 
+        // Optimize image with Sharp: Resize max width to 1200px, compress to 80% quality WebP
+        const optimizedBuffer = await sharp(req.file.buffer)
+            .resize({ width: 1200, withoutEnlargement: true })
+            .webp({ quality: 80 })
+            .toBuffer();
+
+        // Change the original extension to .webp
+        const newFileName = req.file.originalname.replace(/\.[^/.]+$/, "") + ".webp";
+
         const key = await uploadToS3(
-            req.file.buffer,
-            req.file.originalname,
-            req.file.mimetype
+            optimizedBuffer,
+            newFileName,
+            'image/webp'
         );
 
         // Generate presigned URL for secure access (works with private buckets)
